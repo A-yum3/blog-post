@@ -2,5 +2,10 @@
   "scripts": {
     "post": "scripts/post.sh",
     "pull": "scripts/pull.sh"
+  },
+  "devDependencies": {
+    "textlint": "^12.0.2",
+    "textlint-rule-preset-ja-technical-writing": "^7.0.0",
+    "textlint-rule-preset-jtf-style": "^2.3.12"
   }
 }
