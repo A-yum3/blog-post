@@ -3,7 +3,7 @@ Title: ユニットテストの目的
 Category:
 - テスト
 Date: 2021-10-31T20:03:56+09:00
-URL: https://yum3.hatenablog.jp/entry/20211031/1635678236
+URL: https://yum3.hatenablog.jp/entry/test/unit_purpose
 EditURL: https://blog.hatena.ne.jp/noikari/yum3.hatenablog.jp/atom/entry/13574176438028200055
 ---
 

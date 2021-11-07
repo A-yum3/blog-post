@@ -3,7 +3,7 @@ Title: ユニットテストの流派の話
 Category:
 - テスト
 Date: 2021-11-06T10:24:13+09:00
-URL: https://yum3.hatenablog.jp/entry/20211106/1636161853
+URL: https://yum3.hatenablog.jp/entry/test/unit_school
 EditURL: https://blog.hatena.ne.jp/noikari/yum3.hatenablog.jp/atom/entry/13574176438030075644
 ---
 

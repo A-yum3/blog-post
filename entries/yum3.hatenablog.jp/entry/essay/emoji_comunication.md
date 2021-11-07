@@ -1,7 +1,7 @@
 ---
 Title: 絵文字は現代のコミュニケーション
 Date: 2021-10-30T12:58:15+09:00
-URL: https://yum3.hatenablog.jp/entry/20211030/1635566295
+URL: https://yum3.hatenablog.jp/entry/essay/emoji_comunication
 EditURL: https://blog.hatena.ne.jp/noikari/yum3.hatenablog.jp/atom/entry/13574176438027741015
 ---
 

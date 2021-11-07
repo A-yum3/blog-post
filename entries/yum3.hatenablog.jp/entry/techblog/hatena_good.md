@@ -3,7 +3,7 @@ Title: 技術ブログを何で書こうか迷いに迷った結果はてなだ�
 Category:
 - 技術ブログ
 Date: 2021-10-31T00:00:00+09:00
-URL: https://yum3.hatenablog.jp/entry/20211030/1635521866
+URL: https://yum3.hatenablog.jp/entry/techblog/hatena_good
 EditURL: https://blog.hatena.ne.jp/noikari/yum3.hatenablog.jp/atom/entry/13574176438027617439
 ---
 

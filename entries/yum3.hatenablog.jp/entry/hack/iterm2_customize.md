@@ -3,7 +3,7 @@ Title: Macの初期ターミナルを卒業してiTerm2で快適に過ごす
 Category:
 - ターミナル
 Date: 2021-10-30T00:10:19+09:00
-URL: https://yum3.hatenablog.jp/entry/20211030/1635520219
+URL: https://yum3.hatenablog.jp/entry/hack/iterm2_customize
 EditURL: https://blog.hatena.ne.jp/noikari/yum3.hatenablog.jp/atom/entry/13574176438027611226
 ---
 

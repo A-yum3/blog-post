@@ -3,7 +3,7 @@ Title: PhpStormで自分が使っているプラグインをまとめてみた
 Category:
 - エディター
 Date: 2021-10-31T14:49:37+09:00
-URL: https://yum3.hatenablog.jp/entry/20211031/1635659377
+URL: https://yum3.hatenablog.jp/entry/ide/phpstorm_plugin
 EditURL: https://blog.hatena.ne.jp/noikari/yum3.hatenablog.jp/atom/entry/13574176438028093188
 ---
 

@@ -3,7 +3,7 @@ Title: 新卒エンジニア1年目に読んだ本
 Category:
 - 本
 Date: 2021-11-01T08:56:09+09:00
-URL: https://yum3.hatenablog.jp/entry/20211107/1636263963
+URL: https://yum3.hatenablog.jp/entry/book/1year_newbie
 EditURL: https://blog.hatena.ne.jp/noikari/yum3.hatenablog.jp/atom/entry/13574176438028355676
 Draft: true
 ---
