@@ -21,6 +21,8 @@ EditURL: https://blog.hatena.ne.jp/noikari/yum3.hatenablog.jp/atom/entry/1357417
 
 ## 参考
 
+[自分のdotfilesです](https://github.com/A-yum3/dotfiles)ここから直接ファイル見たい人はどうぞ。
+
 残念ながらシロモは付属してくれません。独自で導入してください
 
 ![https://i.gyazo.com/658516ed2a1946ca9b1748dcd3e03017.gif](https://i.gyazo.com/658516ed2a1946ca9b1748dcd3e03017.gif)
@@ -170,7 +172,7 @@ iTerm2を開く
 ↓
 ウィンドウのタブからProfilesを選択し、左サイドバーのProfileNameの中からHotKey Windowを選択してください。
 
-![_2021-07-10_23.05.11.png](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/97413507-b0ce-4762-825b-ff578b9d2f8e/_2021-07-10_23.05.11.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211030%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211030T022623Z&X-Amz-Expires=86400&X-Amz-Signature=fc1495f8d1ec4951812a0e9616e2465c17217341dfdb5056e06207576e5b02b3&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22_2021-07-10_23.05.11.png%22)
+![2021-07-10_23.05.11.png](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/97413507-b0ce-4762-825b-ff578b9d2f8e/_2021-07-10_23.05.11.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211030%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211030T022623Z&X-Amz-Expires=86400&X-Amz-Signature=fc1495f8d1ec4951812a0e9616e2465c17217341dfdb5056e06207576e5b02b3&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22_2021-07-10_23.05.11.png)
 
 ↓
 内側のタブでWindowを選択し
@@ -636,50 +638,45 @@ zinit light drgr33n/oh-my-zsh_aws2-plugin
 `~/.zshrc` の中の最終行から追記してください。
 
 ```bash
+# jq をインタラクティブに使える。JSONを標準出力に出すコマンドを入力した状態で `Alt+j` すると jq のクエリが書ける。
+# 要 jq
+zinit light reegnz/jq-zsh-plugin
 
-# Preztoのセットアップ
-zinit snippet PZT::modules/helper/init.zsh
+# Gitの変更状態がわかる ls。ls の代わりにコマンド `k` を実行するだけ。
+# zinit light supercrabtree/k
 
-# oh-my-zshのセットアップ
-zinit snippet OMZL::git.zsh
-zinit snippet OMZP::git # <- なんかおまじないらしい
-zinit cdclear -q
+# AWS CLI v2の補完。
+# 要 AWS CLI v2
+# この順序で記述しないと `complete:13: command not found: compdef` のようなエラーになるので注意
+autoload bashcompinit && bashcompinit
+source ~/.zinit/plugins/drgr33n---oh-my-zsh_aws2-plugin/aws2_zsh_completer.sh
+complete -C '/usr/local/bin/aws_completer' aws
+zinit light drgr33n/oh-my-zsh_aws2-plugin
 
-# プロンプトのカスタマイズ
-setopt promptsubst
-zinit snippet OMZT::gnzh
-
-# iTerm2を使っている場合に、コマンド `tt タブ名` でタブ名を変更できる
-zinit light gimbo/iterm2-tabs.zsh
-
-# Peco前提
+# anyframeのセットアップ
 zinit light mollifier/anyframe
 
-# Ctrl+x -> b
-# peco でディレクトリの移動履歴を表示
-bindkey '^xb' anyframe-widget-cdr
-autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
-add-zsh-hook chpwd chpwd_recent_dirs
+# クローンしたGit作業ディレクトリで、コマンド `git open` を実行するとブラウザでGitHubが開く
+# zinit light paulirish/git-open
 
-# Ctrl+x -> r
-# peco でコマンドの実行履歴を表示
-bindkey '^xr' anyframe-widget-execute-history
-
-# Ctrl+x -> Ctrl+b
-# peco でGitブランチを表示して切替え
-bindkey '^x^b' anyframe-widget-checkout-git-branch
-
-# Ctrl+x -> g
-# GHQでクローンしたGitリポジトリを表示
-bindkey '^xg' anyframe-widget-cd-ghq-repository
+# powerlevel10k zshのテーマ
+zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # 補完
+# zinit ice wait'0'; zinit light zsh-users/zsh-completions
+# autoload -Uz compinit && compinit
+# zinit light zsh-users/zsh-autosuggestions
 zinit light marlonrichert/zsh-autocomplete
 
-# Ctrl + r で履歴検索
+# laravel artisan補完
+# zinit light jessarcher/zsh-artisan
+
+# シンタックスハイライト
+# zinit light zdharma/fast-syntax-highlighting
+
+# Ctrl+r でコマンド履歴を検索
 zinit light zdharma/history-search-multi-word
 
-# catコマンドを見やすくするbatの導入
 zinit ice as"program" from"gh-r" mv"bat* -> bat" pick"bat/bat"
 zinit light sharkdp/bat
 
@@ -687,6 +684,13 @@ zinit light sharkdp/bat
 if builtin command -v bat > /dev/null; then
   alias cat="bat"
 fi
+
+# iTerm2を使っている場合に、コマンド `tt タブ名` でタブ名を変更できる
+zinit light gimbo/iterm2-tabs.zsh
+
+# zの導入
+zinit load agkozak/zsh-z
+
 ```
 
 ## その他入れたい場合
